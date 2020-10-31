@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
 plugins {
     kotlin("multiplatform") version "1.4.10"
     application
+    id("com.github.ben-manes.versions") version "0.33.0"
 }
 
 group = "me.christoph"
