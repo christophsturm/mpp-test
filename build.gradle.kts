@@ -6,9 +6,12 @@ plugins {
     id("com.github.ben-manes.versions") version "0.33.0"
 }
 
-group = "me.christoph"
+group = "sample"
 version = "1.0-SNAPSHOT"
 
+val ktorVersion = "1.4.1"
+val kotlinVersion = "1.4.10"
+val reactVersion = "17.0.0-pre.129-kotlin-$kotlinVersion"
 repositories {
     jcenter()
     mavenCentral()
@@ -54,8 +57,8 @@ kotlin {
         }
         val jvmMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-server-netty:1.4.0")
-                implementation("io.ktor:ktor-html-builder:1.4.0")
+                implementation("io.ktor:ktor-server-netty:$ktorVersion")
+                implementation("io.ktor:ktor-html-builder:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-html-jvm:0.7.2")
             }
         }
@@ -66,8 +69,8 @@ kotlin {
         }
         val jsMain by getting {
             dependencies {
-                implementation("org.jetbrains:kotlin-react:16.13.1-pre.113-kotlin-1.4.0")
-                implementation("org.jetbrains:kotlin-react-dom:16.13.1-pre.113-kotlin-1.4.0")
+                implementation("org.jetbrains:kotlin-react:$reactVersion")
+                implementation("org.jetbrains:kotlin-react-dom:$reactVersion")
             }
         }
         val jsTest by getting {
